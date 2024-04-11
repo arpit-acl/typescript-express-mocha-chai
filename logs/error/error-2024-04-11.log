@@ -1,0 +1,392 @@
+2024.04.11, 07:53:43.0528 UTC -> Error: ⨯ Unable to compile TypeScript:
+router/index.ts(5,30): error TS2307: Cannot find module '../components/auth/onfido.controller' or its corresponding type declarations.
+
+2024.04.11, 07:53:43.0533 UTC -> Db Connection Error : MongoParseError: Invalid scheme, expected connection string to start with "mongodb://" or "mongodb+srv://"
+2024.04.11, 07:54:03.0933 UTC -> Error: ⨯ Unable to compile TypeScript:
+components/auth/auth.router.ts(2,20): error TS2307: Cannot find module 'multer' or its corresponding type declarations.
+components/auth/auth.router.ts(22,51): error TS2339: Property 'connectWallet' does not exist on type 'authController'.
+components/auth/auth.router.ts(28,46): error TS2339: Property 'subscribe' does not exist on type 'authController'.
+components/auth/auth.router.ts(31,52): error TS2339: Property 'infecuationHome' does not exist on type 'authController'.
+components/auth/auth.router.ts(32,42): error TS2339: Property 'searchController' does not exist on type 'authController'.
+components/auth/auth.router.ts(35,40): error TS2339: Property 'homePageData' does not exist on type 'authController'.
+components/auth/auth.router.ts(36,48): error TS2339: Property 'homeArchiveData' does not exist on type 'authController'.
+components/auth/auth.router.ts(39,48): error TS2339: Property 'infactuationList' does not exist on type 'authController'.
+components/auth/auth.router.ts(40,43): error TS2339: Property 'curatedList' does not exist on type 'authController'.
+components/auth/auth.router.ts(41,43): error TS2339: Property 'featureList' does not exist on type 'authController'.
+components/auth/auth.router.ts(42,48): error TS2339: Property 'getCuratedData' does not exist on type 'authController'.
+components/auth/auth.router.ts(43,48): error TS2339: Property 'featureData' does not exist on type 'authController'.
+components/auth/auth.router.ts(44,47): error TS2339: Property 'getAllArchive' does not exist on type 'authController'.
+components/auth/auth.router.ts(46,54): error TS2339: Property 'happeningRealTime' does not exist on type 'authController'.
+components/auth/auth.router.ts(47,49): error TS2339: Property 'happeningTop' does not exist on type 'authController'.
+components/auth/auth.router.ts(48,54): error TS2339: Property 'happeningGrossing' does not exist on type 'authController'.
+components/auth/auth.router.ts(49,53): error TS2339: Property 'happeningCreator' does not exist on type 'authController'.
+components/auth/auth.router.ts(50,55): error TS2339: Property 'happeningCollector' does not exist on type 'authController'.
+components/auth/auth.router.ts(51,56): error TS2339: Property 'happeningCollection' does not exist on type 'authController'.
+components/auth/auth.router.ts(54,42): error TS2339: Property 'marketResourseData' does not exist on type 'authController'.
+components/auth/auth.router.ts(55,53): error TS2339: Property 'marketCollection' does not exist on type 'authController'.
+components/auth/auth.router.ts(56,47): error TS2339: Property 'marketNfts' does not exist on type 'authController'.
+components/auth/auth.router.ts(59,43): error TS2339: Property 'licenceResourseData' does not exist on type 'authController'.
+components/auth/auth.router.ts(60,54): error TS2339: Property 'licenceCollection' does not exist on type 'authController'.
+components/auth/auth.router.ts(61,48): error TS2339: Property 'licenceNfts' does not exist on type 'authController'.
+components/auth/auth.router.ts(64,48): error TS2339: Property 'creatorList' does not exist on type 'authController'.
+components/auth/auth.router.ts(65,40): error TS2339: Property 'getUserDetails' does not exist on type 'authController'.
+components/auth/auth.router.ts(67,39): error TS2339: Property 'getCmsData' does not exist on type 'authController'.
+
+2024.04.11, 07:54:03.0937 UTC -> Db Connection Error : MongoParseError: Invalid scheme, expected connection string to start with "mongodb://" or "mongodb+srv://"
+2024.04.11, 07:54:49.0133 UTC -> Error: ⨯ Unable to compile TypeScript:
+components/auth/auth.controller.ts(20,22): error TS2339: Property 'emailService' does not exist on type 'typeof Helper'.
+components/auth/auth.controller.ts(21,3): error TS2339: Property 'awsS3Helper' does not exist on type 'typeof Helper'.
+components/auth/auth.controller.ts(21,16): error TS2339: Property 'salesforceHelper' does not exist on type 'typeof Helper'.
+components/auth/auth.controller.ts(21,34): error TS2339: Property 'utilsHelper' does not exist on type 'typeof Helper'.
+components/auth/auth.controller.ts(21,47): error TS2339: Property 'web3Helper' does not exist on type 'typeof Helper'.
+components/auth/auth.controller.ts(31,50): error TS2304: Cannot find name 'signupFiles'.
+components/auth/auth.controller.ts(31,75): error TS2339: Property 'files' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+components/auth/auth.controller.ts(62,53): error TS2304: Cannot find name 'createApplicantUser'.
+components/auth/auth.controller.ts(67,54): error TS2304: Cannot find name 'connectApplicantToWorkflow'.
+components/auth/auth.controller.ts(68,44): error TS2304: Cannot find name 'sdkTokenGenerate'.
+components/auth/auth.controller.ts(77,28): error TS2304: Cannot find name 'awsFileUploadResponse'.
+components/auth/auth.controller.ts(79,24): error TS2339: Property 'S3_FOLERS' does not exist on type '{ DEFAULT_LOG_DIR: string; LOG_TYPE: string[]; RESPONSE_STATUS: { SUCCESS: number; BAD_REQUEST: number; SERVER_ERROR: number; NOT_FOUND: number; UNAUTHORIZED: number; }; MODELS: { ADMIN: string; ROLES: string; CMS: string; USER: string; }; ... 4 more ...; EMAIL: {}; }'.
+components/auth/auth.controller.ts(91,28): error TS2304: Cannot find name 'awsFileUploadResponse'.
+components/auth/auth.controller.ts(93,24): error TS2339: Property 'S3_FOLERS' does not exist on type '{ DEFAULT_LOG_DIR: string; LOG_TYPE: string[]; RESPONSE_STATUS: { SUCCESS: number; BAD_REQUEST: number; SERVER_ERROR: number; NOT_FOUND: number; UNAUTHORIZED: number; }; MODELS: { ADMIN: string; ROLES: string; CMS: string; USER: string; }; ... 4 more ...; EMAIL: {}; }'.
+components/auth/auth.controller.ts(105,28): error TS2304: Cannot find name 'awsFileUploadResponse'.
+components/auth/auth.controller.ts(107,24): error TS2339: Property 'S3_FOLERS' does not exist on type '{ DEFAULT_LOG_DIR: string; LOG_TYPE: string[]; RESPONSE_STATUS: { SUCCESS: number; BAD_REQUEST: number; SERVER_ERROR: number; NOT_FOUND: number; UNAUTHORIZED: number; }; MODELS: { ADMIN: string; ROLES: string; CMS: string; USER: string; }; ... 4 more ...; EMAIL: {}; }'.
+components/auth/auth.controller.ts(285,37): error TS2304: Cannot find name 'Subscribe'.
+components/auth/auth.controller.ts(319,65): error TS2339: Property '_user' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+2024.04.11, 07:54:49.0135 UTC -> Db Connection Error : MongoParseError: Invalid scheme, expected connection string to start with "mongodb://" or "mongodb+srv://"
+2024.04.11, 07:55:16.0192 UTC -> Error: ⨯ Unable to compile TypeScript:
+components/auth/auth.controller.ts(29,50): error TS2304: Cannot find name 'signupFiles'.
+components/auth/auth.controller.ts(29,75): error TS2339: Property 'files' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+components/auth/auth.controller.ts(60,53): error TS2304: Cannot find name 'createApplicantUser'.
+components/auth/auth.controller.ts(65,54): error TS2304: Cannot find name 'connectApplicantToWorkflow'.
+components/auth/auth.controller.ts(66,44): error TS2304: Cannot find name 'sdkTokenGenerate'.
+components/auth/auth.controller.ts(75,28): error TS2304: Cannot find name 'awsFileUploadResponse'.
+components/auth/auth.controller.ts(75,65): error TS2304: Cannot find name 'awsS3Helper'.
+components/auth/auth.controller.ts(77,24): error TS2339: Property 'S3_FOLERS' does not exist on type '{ DEFAULT_LOG_DIR: string; LOG_TYPE: string[]; RESPONSE_STATUS: { SUCCESS: number; BAD_REQUEST: number; SERVER_ERROR: number; NOT_FOUND: number; UNAUTHORIZED: number; }; MODELS: { ADMIN: string; ROLES: string; CMS: string; USER: string; }; ... 4 more ...; EMAIL: {}; }'.
+components/auth/auth.controller.ts(89,28): error TS2304: Cannot find name 'awsFileUploadResponse'.
+components/auth/auth.controller.ts(89,65): error TS2304: Cannot find name 'awsS3Helper'.
+components/auth/auth.controller.ts(91,24): error TS2339: Property 'S3_FOLERS' does not exist on type '{ DEFAULT_LOG_DIR: string; LOG_TYPE: string[]; RESPONSE_STATUS: { SUCCESS: number; BAD_REQUEST: number; SERVER_ERROR: number; NOT_FOUND: number; UNAUTHORIZED: number; }; MODELS: { ADMIN: string; ROLES: string; CMS: string; USER: string; }; ... 4 more ...; EMAIL: {}; }'.
+components/auth/auth.controller.ts(103,28): error TS2304: Cannot find name 'awsFileUploadResponse'.
+components/auth/auth.controller.ts(103,65): error TS2304: Cannot find name 'awsS3Helper'.
+components/auth/auth.controller.ts(105,24): error TS2339: Property 'S3_FOLERS' does not exist on type '{ DEFAULT_LOG_DIR: string; LOG_TYPE: string[]; RESPONSE_STATUS: { SUCCESS: number; BAD_REQUEST: number; SERVER_ERROR: number; NOT_FOUND: number; UNAUTHORIZED: number; }; MODELS: { ADMIN: string; ROLES: string; CMS: string; USER: string; }; ... 4 more ...; EMAIL: {}; }'.
+components/auth/auth.controller.ts(166,35): error TS2304: Cannot find name 'collectorId'.
+components/auth/auth.controller.ts(167,54): error TS2304: Cannot find name 'salesforceHelper'.
+components/auth/auth.controller.ts(170,78): error TS2304: Cannot find name 'salesforceHelper'.
+components/auth/auth.controller.ts(171,54): error TS2304: Cannot find name 'salesforceHelper'.
+components/auth/auth.controller.ts(180,13): error TS2304: Cannot find name 'Email'.
+components/auth/auth.controller.ts(220,11): error TS2304: Cannot find name 'Email'.
+components/auth/auth.controller.ts(237,19): error TS2304: Cannot find name 'utilsHelper'.
+components/auth/auth.controller.ts(239,11): error TS2304: Cannot find name 'Email'.
+components/auth/auth.controller.ts(257,37): error TS2304: Cannot find name 'web3Helper'.
+components/auth/auth.controller.ts(283,37): error TS2304: Cannot find name 'Subscribe'.
+components/auth/auth.controller.ts(311,74): error TS2304: Cannot find name 'salesforceHelper'.
+components/auth/auth.controller.ts(313,28): error TS2304: Cannot find name 'salesforceHelper'.
+components/auth/auth.controller.ts(317,65): error TS2339: Property '_user' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+2024.04.11, 07:55:16.0200 UTC -> Db Connection Error : MongoParseError: Invalid scheme, expected connection string to start with "mongodb://" or "mongodb+srv://"
+2024.04.11, 07:58:14.0758 UTC -> Error: ⨯ Unable to compile TypeScript:
+middleware/request.validator.ts(3,22): error TS2691: An import path cannot end with a '.ts' extension. Consider importing '../helpers/request.helper' instead.
+
+2024.04.11, 07:58:14.0763 UTC -> Db Connection Error : MongoParseError: Invalid scheme, expected connection string to start with "mongodb://" or "mongodb+srv://"
+2024.04.11, 08:02:32.0517 UTC -> Error: ⨯ Unable to compile TypeScript:
+middleware/request.validator.ts(3,22): error TS2691: An import path cannot end with a '.ts' extension. Consider importing '../helpers/request.helper' instead.
+
+2024.04.11, 08:02:32.0523 UTC -> Db Connection Error : MongoParseError: Invalid scheme, expected connection string to start with "mongodb://" or "mongodb+srv://"
+2024.04.11, 08:05:04.0520 UTC -> Error: ⨯ Unable to compile TypeScript:
+components/users/user.controller.ts(36,26): error TS2339: Property '_userId' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+components/users/user.controller.ts(38,35): error TS2304: Cannot find name 'Subscribe'.
+components/users/user.controller.ts(39,40): error TS2339: Property 'followerDataFactory' does not exist on type 'userController'.
+components/users/user.controller.ts(40,22): error TS2339: Property '_user' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+components/users/user.controller.ts(74,20): error TS2339: Property '_user' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+components/users/user.controller.ts(83,60): error TS2304: Cannot find name 'salesforceHelper'.
+components/users/user.controller.ts(84,65): error TS2339: Property '_user' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+components/users/user.controller.ts(87,15): error TS2304: Cannot find name 'Email'.
+components/users/user.controller.ts(87,25): error TS2339: Property '_user' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+components/users/user.controller.ts(103,32): error TS2304: Cannot find name 'salesforceHelper'.
+components/users/user.controller.ts(104,32): error TS2304: Cannot find name 'salesforceHelper'.
+components/users/user.controller.ts(134,50): error TS2304: Cannot find name 'signupFiles'.
+components/users/user.controller.ts(134,75): error TS2339: Property 'files' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+components/users/user.controller.ts(142,60): error TS2339: Property '_user' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+components/users/user.controller.ts(145,9): error TS2304: Cannot find name 'awsS3Helper'.
+components/users/user.controller.ts(153,28): error TS2304: Cannot find name 'awsFileUploadResponse'.
+components/users/user.controller.ts(153,65): error TS2304: Cannot find name 'awsS3Helper'.
+components/users/user.controller.ts(155,24): error TS2339: Property 'S3_FOLERS' does not exist on type '{ DEFAULT_LOG_DIR: string; LOG_TYPE: string[]; RESPONSE_STATUS: { SUCCESS: number; BAD_REQUEST: number; SERVER_ERROR: number; NOT_FOUND: number; UNAUTHORIZED: number; }; MODELS: { ADMIN: string; ROLES: string; CMS: string; USER: string; }; ... 4 more ...; EMAIL: {}; }'.
+components/users/user.controller.ts(155,46): error TS2339: Property '_user' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+components/users/user.controller.ts(165,9): error TS2304: Cannot find name 'awsS3Helper'.
+components/users/user.controller.ts(174,28): error TS2304: Cannot find name 'awsFileUploadResponse'.
+components/users/user.controller.ts(174,65): error TS2304: Cannot find name 'awsS3Helper'.
+components/users/user.controller.ts(176,24): error TS2339: Property 'S3_FOLERS' does not exist on type '{ DEFAULT_LOG_DIR: string; LOG_TYPE: string[]; RESPONSE_STATUS: { SUCCESS: number; BAD_REQUEST: number; SERVER_ERROR: number; NOT_FOUND: number; UNAUTHORIZED: number; }; MODELS: { ADMIN: string; ROLES: string; CMS: string; USER: string; }; ... 4 more ...; EMAIL: {}; }'.
+components/users/user.controller.ts(176,46): error TS2339: Property '_user' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+components/users/user.controller.ts(186,9): error TS2304: Cannot find name 'awsS3Helper'.
+components/users/user.controller.ts(196,28): error TS2304: Cannot find name 'awsFileUploadResponse'.
+components/users/user.controller.ts(196,65): error TS2304: Cannot find name 'awsS3Helper'.
+components/users/user.controller.ts(198,24): error TS2339: Property 'S3_FOLERS' does not exist on type '{ DEFAULT_LOG_DIR: string; LOG_TYPE: string[]; RESPONSE_STATUS: { SUCCESS: number; BAD_REQUEST: number; SERVER_ERROR: number; NOT_FOUND: number; UNAUTHORIZED: number; }; MODELS: { ADMIN: string; ROLES: string; CMS: string; USER: string; }; ... 4 more ...; EMAIL: {}; }'.
+components/users/user.controller.ts(198,46): error TS2339: Property '_user' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+components/users/user.controller.ts(226,20): error TS2339: Property '_user' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+components/users/user.controller.ts(235,9): error TS2304: Cannot find name 'salesforceHelper'.
+components/users/user.controller.ts(267,25): error TS2339: Property '_user' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+2024.04.11, 08:05:04.0523 UTC -> Db Connection Error : MongoParseError: Invalid scheme, expected connection string to start with "mongodb://" or "mongodb+srv://"
+2024.04.11, 08:46:14.0982 UTC -> Error: ⨯ Unable to compile TypeScript:
+components/users/user.controller.ts(69,20): error TS2339: Property '_user' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+components/users/user.controller.ts(119,25): error TS2339: Property '_user' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+2024.04.11, 08:46:14.0988 UTC -> Db Connection Error : MongoParseError: Invalid scheme, expected connection string to start with "mongodb://" or "mongodb+srv://"
+2024.04.11, 08:47:13.0161 UTC -> Error: ⨯ Unable to compile TypeScript:
+components/users/user.controller.ts(69,20): error TS2339: Property '_user' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+components/users/user.controller.ts(119,25): error TS2339: Property '_user' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+2024.04.11, 08:47:13.0166 UTC -> Db Connection Error : MongoParseError: Invalid scheme, expected connection string to start with "mongodb://" or "mongodb+srv://"
+2024.04.11, 08:48:12.0030 UTC -> Error: ⨯ Unable to compile TypeScript:
+jobs/index.ts(7,3): error TS2564: Property 'auctionEndCron' has no initializer and is not definitely assigned in the constructor.
+jobs/index.ts(8,3): error TS2564: Property 'collectionReleaseCron' has no initializer and is not definitely assigned in the constructor.
+
+2024.04.11, 08:48:12.0032 UTC -> Db Connection Error : MongoParseError: Invalid scheme, expected connection string to start with "mongodb://" or "mongodb+srv://"
+2024.04.11, 08:48:32.0453 UTC -> Db Connection Error : MongoParseError: Invalid scheme, expected connection string to start with "mongodb://" or "mongodb+srv://"
+2024.04.11, 08:49:29.0157 UTC -> Db Connection Error : MongoParseError: Invalid scheme, expected connection string to start with "mongodb://" or "mongodb+srv://"
+2024.04.11, 08:52:42.0076 UTC -> Error: ⨯ Unable to compile TypeScript:
+components/users/user.controller.ts(69,20): error TS2339: Property '_user' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+components/users/user.controller.ts(119,25): error TS2339: Property '_user' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+2024.04.11, 08:54:11.0468 UTC -> Error: ⨯ Unable to compile TypeScript:
+middleware/token.validator.ts(17,13): error TS2551: Property '_userId' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'. Did you mean '_user'?
+middleware/token.validator.ts(23,17): error TS2551: Property '_userId' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'. Did you mean '_user'?
+middleware/token.validator.ts(25,19): error TS2339: Property '_notification' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+middleware/token.validator.ts(25,40): error TS2339: Property 'notificationPreferences' does not exist on type 'Document<unknown, any, UserDoc> & Omit<UserDoc & { _id: ObjectId; }, never>'.
+middleware/token.validator.ts(52,17): error TS2551: Property '_userId' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'. Did you mean '_user'?
+middleware/token.validator.ts(57,17): error TS2339: Property '_notification' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+middleware/token.validator.ts(57,38): error TS2339: Property 'notificationPreferences' does not exist on type 'Document<unknown, any, UserDoc> & Omit<UserDoc & { _id: ObjectId; }, never>'.
+
+2024.04.11, 09:00:49.0437 UTC -> Error: ⨯ Unable to compile TypeScript:
+middleware/token.validator.ts(17,13): error TS2551: Property '_userId' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'. Did you mean '_user'?
+middleware/token.validator.ts(23,17): error TS2551: Property '_userId' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'. Did you mean '_user'?
+middleware/token.validator.ts(25,19): error TS2339: Property '_notification' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+middleware/token.validator.ts(25,40): error TS2339: Property 'notificationPreferences' does not exist on type 'Document<unknown, any, UserDoc> & Omit<UserDoc & { _id: ObjectId; }, never>'.
+middleware/token.validator.ts(52,17): error TS2551: Property '_userId' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'. Did you mean '_user'?
+middleware/token.validator.ts(57,17): error TS2339: Property '_notification' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+middleware/token.validator.ts(57,38): error TS2339: Property 'notificationPreferences' does not exist on type 'Document<unknown, any, UserDoc> & Omit<UserDoc & { _id: ObjectId; }, never>'.
+
+2024.04.11, 09:01:18.0009 UTC -> Error: ⨯ Unable to compile TypeScript:
+middleware/token.validator.ts(17,13): error TS2551: Property '_userId' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'. Did you mean '_user'?
+middleware/token.validator.ts(23,17): error TS2551: Property '_userId' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'. Did you mean '_user'?
+middleware/token.validator.ts(25,19): error TS2339: Property '_notification' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+middleware/token.validator.ts(25,40): error TS2339: Property 'notificationPreferences' does not exist on type 'Document<unknown, any, UserDoc> & Omit<UserDoc & { _id: ObjectId; }, never>'.
+middleware/token.validator.ts(52,17): error TS2551: Property '_userId' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'. Did you mean '_user'?
+middleware/token.validator.ts(57,17): error TS2339: Property '_notification' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+middleware/token.validator.ts(57,38): error TS2339: Property 'notificationPreferences' does not exist on type 'Document<unknown, any, UserDoc> & Omit<UserDoc & { _id: ObjectId; }, never>'.
+
+2024.04.11, 09:01:30.0799 UTC -> Error: ⨯ Unable to compile TypeScript:
+middleware/token.validator.ts(25,40): error TS2339: Property 'notificationPreferences' does not exist on type 'Document<unknown, any, UserDoc> & Omit<UserDoc & { _id: ObjectId; }, never>'.
+middleware/token.validator.ts(57,38): error TS2339: Property 'notificationPreferences' does not exist on type 'Document<unknown, any, UserDoc> & Omit<UserDoc & { _id: ObjectId; }, never>'.
+
+2024.04.11, 09:02:24.0635 UTC -> Error: ⨯ Unable to compile TypeScript:
+middleware/token.validator.ts(25,19): error TS2339: Property '_notification' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+middleware/token.validator.ts(25,40): error TS2339: Property 'notificationPreferences' does not exist on type 'Document<unknown, any, UserDoc> & Omit<UserDoc & { _id: ObjectId; }, never>'.
+middleware/token.validator.ts(57,17): error TS2339: Property '_notification' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+middleware/token.validator.ts(57,38): error TS2339: Property 'notificationPreferences' does not exist on type 'Document<unknown, any, UserDoc> & Omit<UserDoc & { _id: ObjectId; }, never>'.
+
+2024.04.11, 09:02:40.0883 UTC -> Error: ⨯ Unable to compile TypeScript:
+middleware/token.validator.ts(56,17): error TS2339: Property '_notification' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+middleware/token.validator.ts(56,38): error TS2339: Property 'notificationPreferences' does not exist on type 'Document<unknown, any, UserDoc> & Omit<UserDoc & { _id: ObjectId; }, never>'.
+
+2024.04.11, 09:02:58.0989 UTC -> Error: Cannot find module 'jsonwebtoken'
+Require stack:
+- /home/arpit/Desktop/Node/express/express-typescript/middleware/token.validator.ts
+- /home/arpit/Desktop/Node/express/express-typescript/components/users/user.router.ts
+- /home/arpit/Desktop/Node/express/express-typescript/router/index.ts
+- /home/arpit/Desktop/Node/express/express-typescript/app.ts
+- /home/arpit/Desktop/Node/express/express-typescript/server.ts
+2024.04.11, 09:04:27.0401 UTC -> Error: Cannot find module '../types'
+Require stack:
+- /home/arpit/Desktop/Node/express/express-typescript/middleware/token.validator.ts
+- /home/arpit/Desktop/Node/express/express-typescript/components/users/user.router.ts
+- /home/arpit/Desktop/Node/express/express-typescript/router/index.ts
+- /home/arpit/Desktop/Node/express/express-typescript/app.ts
+- /home/arpit/Desktop/Node/express/express-typescript/server.ts
+2024.04.11, 09:23:09.0819 UTC -> Error: ⨯ Unable to compile TypeScript:
+components/users/user.controller.ts(69,20): error TS2339: Property '_user' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+components/users/user.controller.ts(119,25): error TS2339: Property '_user' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+2024.04.11, 09:24:35.0204 UTC -> Error: ⨯ Unable to compile TypeScript:
+components/admin/admin.controller.ts(112,13): error TS7022: 'otp' implicitly has type 'any' because it does not have a type annotation and is referenced directly or indirectly in its own initializer.
+components/admin/admin.controller.ts(112,19): error TS2448: Block-scoped variable 'otp' used before its declaration.
+components/admin/admin.controller.ts(114,11): error TS2552: Cannot find name 'Email'. Did you mean 'email'?
+
+2024.04.11, 09:27:16.0860 UTC -> Error: ⨯ Unable to compile TypeScript:
+components/auth/auth.router.ts(4,72): error TS2306: File '/home/arpit/Desktop/Node/express/express-typescript/validation/auth.validation.ts' is not a module.
+components/auth/auth.router.ts(11,44): error TS2304: Cannot find name 'lo'.
+
+2024.04.11, 09:30:59.0811 UTC -> Error: Cannot find module '../components/auth/auth.router'
+Require stack:
+- /home/arpit/Desktop/Node/express/express-typescript/router/index.ts
+- /home/arpit/Desktop/Node/express/express-typescript/app.ts
+- /home/arpit/Desktop/Node/express/express-typescript/server.ts
+2024.04.11, 09:39:46.0559 UTC -> Error: ⨯ Unable to compile TypeScript:
+router/index.ts(3,24): error TS2306: File '/home/arpit/Desktop/Node/express/express-typescript/router/user.router.ts' is not a module.
+router/index.ts(5,23): error TS2306: File '/home/arpit/Desktop/Node/express/express-typescript/router/cms.router.ts' is not a module.
+
+2024.04.11, 09:40:06.0035 UTC -> Error: ⨯ Unable to compile TypeScript:
+router/index.ts(3,24): error TS2306: File '/home/arpit/Desktop/Node/express/express-typescript/router/user.router.ts' is not a module.
+router/index.ts(5,23): error TS2306: File '/home/arpit/Desktop/Node/express/express-typescript/router/cms.router.ts' is not a module.
+
+2024.04.11, 09:40:06.0475 UTC -> Error: ⨯ Unable to compile TypeScript:
+router/index.ts(3,24): error TS2306: File '/home/arpit/Desktop/Node/express/express-typescript/router/user.router.ts' is not a module.
+router/index.ts(5,23): error TS2306: File '/home/arpit/Desktop/Node/express/express-typescript/router/cms.router.ts' is not a module.
+
+2024.04.11, 09:40:07.0499 UTC -> Error: ⨯ Unable to compile TypeScript:
+router/index.ts(3,24): error TS2306: File '/home/arpit/Desktop/Node/express/express-typescript/router/user.router.ts' is not a module.
+router/index.ts(5,23): error TS2306: File '/home/arpit/Desktop/Node/express/express-typescript/router/cms.router.ts' is not a module.
+
+2024.04.11, 09:40:30.0692 UTC -> Error: ⨯ Unable to compile TypeScript:
+router/index.ts(3,24): error TS2306: File '/home/arpit/Desktop/Node/express/express-typescript/router/user.router.ts' is not a module.
+router/index.ts(5,23): error TS2306: File '/home/arpit/Desktop/Node/express/express-typescript/router/cms.router.ts' is not a module.
+
+2024.04.11, 09:40:42.0154 UTC -> Error: ⨯ Unable to compile TypeScript:
+router/index.ts(3,24): error TS2306: File '/home/arpit/Desktop/Node/express/express-typescript/router/user.router.ts' is not a module.
+router/index.ts(5,23): error TS2306: File '/home/arpit/Desktop/Node/express/express-typescript/router/cms.router.ts' is not a module.
+
+2024.04.11, 09:40:42.0768 UTC -> Error: ⨯ Unable to compile TypeScript:
+router/index.ts(3,24): error TS2306: File '/home/arpit/Desktop/Node/express/express-typescript/router/user.router.ts' is not a module.
+router/index.ts(5,23): error TS2306: File '/home/arpit/Desktop/Node/express/express-typescript/router/cms.router.ts' is not a module.
+
+2024.04.11, 09:41:24.0475 UTC -> Error: ⨯ Unable to compile TypeScript:
+router/index.ts(3,24): error TS2306: File '/home/arpit/Desktop/Node/express/express-typescript/router/user.router.ts' is not a module.
+router/index.ts(5,23): error TS2306: File '/home/arpit/Desktop/Node/express/express-typescript/router/cms.router.ts' is not a module.
+
+2024.04.11, 09:41:40.0471 UTC -> Error: ⨯ Unable to compile TypeScript:
+router/index.ts(11,26): error TS2304: Cannot find name 'userRouter'.
+
+2024.04.11, 09:41:43.0992 UTC -> Error: ⨯ Unable to compile TypeScript:
+router/index.ts(5,23): error TS2307: Cannot find module './c' or its corresponding type declarations.
+
+2024.04.11, 09:41:44.0406 UTC -> Error: ⨯ Unable to compile TypeScript:
+router/index.ts(3,24): error TS2306: File '/home/arpit/Desktop/Node/express/express-typescript/router/user.router.ts' is not a module.
+router/index.ts(5,23): error TS2306: File '/home/arpit/Desktop/Node/express/express-typescript/router/cms.router.ts' is not a module.
+
+2024.04.11, 09:42:31.0391 UTC -> Error: ⨯ Unable to compile TypeScript:
+helpers/serviceHelper.ts(3,23): error TS2307: Cannot find module '../components/auth/auth.model' or its corresponding type declarations.
+helpers/serviceHelper.ts(4,31): error TS2307: Cannot find module '../components/auth/verification.model' or its corresponding type declarations.
+helpers/serviceHelper.ts(5,22): error TS2307: Cannot find module '../components/cms/cms.model' or its corresponding type declarations.
+helpers/serviceHelper.ts(6,24): error TS2307: Cannot find module '../components/admin/admin.model' or its corresponding type declarations.
+
+2024.04.11, 09:42:39.0648 UTC -> Error: ⨯ Unable to compile TypeScript:
+helpers/serviceHelper.ts(3,23): error TS2307: Cannot find module '../components/auth/auth.model' or its corresponding type declarations.
+helpers/serviceHelper.ts(4,31): error TS2307: Cannot find module '../components/auth/verification.model' or its corresponding type declarations.
+helpers/serviceHelper.ts(5,22): error TS2307: Cannot find module '../components/cms/cms.model' or its corresponding type declarations.
+helpers/serviceHelper.ts(6,24): error TS2307: Cannot find module '../components/admin/admin.model' or its corresponding type declarations.
+
+2024.04.11, 09:42:40.0916 UTC -> Error: ⨯ Unable to compile TypeScript:
+helpers/serviceHelper.ts(3,23): error TS2307: Cannot find module '../components/auth/auth.model' or its corresponding type declarations.
+helpers/serviceHelper.ts(4,31): error TS2307: Cannot find module '../components/auth/verification.model' or its corresponding type declarations.
+helpers/serviceHelper.ts(5,22): error TS2307: Cannot find module '../components/cms/cms.model' or its corresponding type declarations.
+helpers/serviceHelper.ts(6,24): error TS2307: Cannot find module '../components/admin/admin.model' or its corresponding type declarations.
+
+2024.04.11, 09:43:16.0893 UTC -> Error: ⨯ Unable to compile TypeScript:
+helpers/service.helper.ts(3,23): error TS2307: Cannot find module '../components/auth/auth.model' or its corresponding type declarations.
+helpers/service.helper.ts(4,31): error TS2307: Cannot find module '../components/auth/verification.model' or its corresponding type declarations.
+helpers/service.helper.ts(5,22): error TS2307: Cannot find module '../components/cms/cms.model' or its corresponding type declarations.
+helpers/service.helper.ts(6,24): error TS2307: Cannot find module '../components/admin/admin.model' or its corresponding type declarations.
+
+2024.04.11, 09:43:20.0378 UTC -> Error: ⨯ Unable to compile TypeScript:
+helpers/service.helper.ts(3,23): error TS2307: Cannot find module '../components/auth/auth.model' or its corresponding type declarations.
+helpers/service.helper.ts(4,31): error TS2307: Cannot find module '../components/auth/verification.model' or its corresponding type declarations.
+helpers/service.helper.ts(5,22): error TS2307: Cannot find module '../components/cms/cms.model' or its corresponding type declarations.
+helpers/service.helper.ts(6,24): error TS2307: Cannot find module '../components/admin/admin.model' or its corresponding type declarations.
+
+2024.04.11, 09:43:30.0850 UTC -> Error: ⨯ Unable to compile TypeScript:
+helpers/service.helper.ts(3,23): error TS2307: Cannot find module '../model/auth/auth.model' or its corresponding type declarations.
+helpers/service.helper.ts(4,31): error TS2307: Cannot find module '../components/auth/verification.model' or its corresponding type declarations.
+helpers/service.helper.ts(5,22): error TS2307: Cannot find module '../components/cms/cms.model' or its corresponding type declarations.
+helpers/service.helper.ts(6,24): error TS2307: Cannot find module '../components/admin/admin.model' or its corresponding type declarations.
+
+2024.04.11, 09:43:32.0546 UTC -> Error: ⨯ Unable to compile TypeScript:
+helpers/service.helper.ts(3,23): error TS2307: Cannot find module '../models/auth/auth.model' or its corresponding type declarations.
+helpers/service.helper.ts(4,31): error TS2307: Cannot find module '../components/auth/verification.model' or its corresponding type declarations.
+helpers/service.helper.ts(5,22): error TS2307: Cannot find module '../components/cms/cms.model' or its corresponding type declarations.
+helpers/service.helper.ts(6,24): error TS2307: Cannot find module '../components/admin/admin.model' or its corresponding type declarations.
+
+2024.04.11, 09:43:33.0185 UTC -> Error: ⨯ Unable to compile TypeScript:
+helpers/service.helper.ts(3,23): error TS2307: Cannot find module '../models/auth/auth.model' or its corresponding type declarations.
+helpers/service.helper.ts(4,31): error TS2307: Cannot find module '../components/auth/verification.model' or its corresponding type declarations.
+helpers/service.helper.ts(5,22): error TS2307: Cannot find module '../components/cms/cms.model' or its corresponding type declarations.
+helpers/service.helper.ts(6,24): error TS2307: Cannot find module '../components/admin/admin.model' or its corresponding type declarations.
+
+2024.04.11, 09:43:37.0356 UTC -> Error: ⨯ Unable to compile TypeScript:
+helpers/service.helper.ts(3,23): error TS2307: Cannot find module '../models/auth/auth.model' or its corresponding type declarations.
+helpers/service.helper.ts(4,22): error TS2307: Cannot find module '../components/cms/cms.model' or its corresponding type declarations.
+helpers/service.helper.ts(5,24): error TS2307: Cannot find module '../components/admin/admin.model' or its corresponding type declarations.
+helpers/service.helper.ts(27,48): error TS2304: Cannot find name 'verificationModel'.
+
+2024.04.11, 09:43:44.0586 UTC -> Error: ⨯ Unable to compile TypeScript:
+helpers/service.helper.ts(3,23): error TS2307: Cannot find module '../models/auth/auth.model' or its corresponding type declarations.
+helpers/service.helper.ts(4,22): error TS2307: Cannot find module '../models/cms/cms.model' or its corresponding type declarations.
+helpers/service.helper.ts(5,24): error TS2307: Cannot find module '../models/admin/admin.model' or its corresponding type declarations.
+helpers/service.helper.ts(27,48): error TS2304: Cannot find name 'verificationModel'.
+
+2024.04.11, 09:43:49.0868 UTC -> Error: ⨯ Unable to compile TypeScript:
+helpers/service.helper.ts(3,23): error TS2307: Cannot find module '../models/auth.model' or its corresponding type declarations.
+helpers/service.helper.ts(4,22): error TS2307: Cannot find module '../models/cms.model' or its corresponding type declarations.
+helpers/service.helper.ts(5,24): error TS2307: Cannot find module '../models/admin.model' or its corresponding type declarations.
+helpers/service.helper.ts(27,48): error TS2304: Cannot find name 'verificationModel'.
+
+2024.04.11, 09:43:50.0746 UTC -> Error: ⨯ Unable to compile TypeScript:
+helpers/service.helper.ts(3,23): error TS2307: Cannot find module '../models/auth.model' or its corresponding type declarations.
+helpers/service.helper.ts(4,22): error TS2307: Cannot find module '../models/cms.model' or its corresponding type declarations.
+helpers/service.helper.ts(5,24): error TS2307: Cannot find module '../models/admin.model' or its corresponding type declarations.
+helpers/service.helper.ts(27,48): error TS2304: Cannot find name 'verificationModel'.
+
+2024.04.11, 09:44:05.0256 UTC -> Error: ⨯ Unable to compile TypeScript:
+helpers/service.helper.ts(3,22): error TS2307: Cannot find module '../models/cms.model' or its corresponding type declarations.
+helpers/service.helper.ts(24,40): error TS2304: Cannot find name 'authModel'.
+helpers/service.helper.ts(25,48): error TS2304: Cannot find name 'verificationModel'.
+helpers/service.helper.ts(27,41): error TS2304: Cannot find name 'adminModel'.
+
+2024.04.11, 09:44:07.0629 UTC -> Error: ⨯ Unable to compile TypeScript:
+helpers/service.helper.ts(3,22): error TS2307: Cannot find module '../models/cms.model' or its corresponding type declarations.
+helpers/service.helper.ts(4,24): error TS2307: Cannot find module '../models/admin.model' or its corresponding type declarations.
+helpers/service.helper.ts(25,40): error TS2304: Cannot find name 'authModel'.
+helpers/service.helper.ts(26,48): error TS2304: Cannot find name 'verificationModel'.
+
+2024.04.11, 09:44:24.0682 UTC -> Error: ⨯ Unable to compile TypeScript:
+helpers/service.helper.ts(3,22): error TS2307: Cannot find module '../models/cms.model' or its corresponding type declarations.
+helpers/service.helper.ts(25,40): error TS2304: Cannot find name 'authModel'.
+helpers/service.helper.ts(26,48): error TS2304: Cannot find name 'verificationModel'.
+helpers/service.helper.ts(28,41): error TS2304: Cannot find name 'adminModel'.
+
+2024.04.11, 09:44:48.0319 UTC -> Error: ⨯ Unable to compile TypeScript:
+helpers/service.helper.ts(3,22): error TS2307: Cannot find module '../models/cms.model' or its corresponding type declarations.
+helpers/service.helper.ts(25,40): error TS2304: Cannot find name 'authModel'.
+helpers/service.helper.ts(26,48): error TS2304: Cannot find name 'verificationModel'.
+helpers/service.helper.ts(28,41): error TS2304: Cannot find name 'adminModel'.
+
+2024.04.11, 09:44:48.0969 UTC -> Error: ⨯ Unable to compile TypeScript:
+helpers/service.helper.ts(3,22): error TS2307: Cannot find module '../models/cms.model' or its corresponding type declarations.
+helpers/service.helper.ts(25,40): error TS2304: Cannot find name 'authModel'.
+helpers/service.helper.ts(26,48): error TS2304: Cannot find name 'verificationModel'.
+helpers/service.helper.ts(28,41): error TS2304: Cannot find name 'adminModel'.
+
+2024.04.11, 09:45:06.0941 UTC -> Error: ⨯ Unable to compile TypeScript:
+helpers/service.helper.ts(17,3): error TS2564: Property 'authService' has no initializer and is not definitely assigned in the constructor.
+helpers/service.helper.ts(18,3): error TS2564: Property 'verificationService' has no initializer and is not definitely assigned in the constructor.
+helpers/service.helper.ts(20,3): error TS2564: Property 'adminService' has no initializer and is not definitely assigned in the constructor.
+helpers/service.helper.ts(26,10): error TS2339: Property 'roleService' does not exist on type 'Helper'.
+
+2024.04.11, 09:45:18.0021 UTC -> Error: ⨯ Unable to compile TypeScript:
+helpers/service.helper.ts(17,3): error TS2564: Property 'authService' has no initializer and is not definitely assigned in the constructor.
+helpers/service.helper.ts(18,3): error TS2564: Property 'verificationService' has no initializer and is not definitely assigned in the constructor.
+helpers/service.helper.ts(20,3): error TS2564: Property 'adminService' has no initializer and is not definitely assigned in the constructor.
+helpers/service.helper.ts(26,10): error TS2339: Property 'roleService' does not exist on type 'Helper'.
+
+2024.04.11, 09:45:19.0391 UTC -> Error: ⨯ Unable to compile TypeScript:
+helpers/service.helper.ts(17,3): error TS2564: Property 'authService' has no initializer and is not definitely assigned in the constructor.
+helpers/service.helper.ts(18,3): error TS2564: Property 'verificationService' has no initializer and is not definitely assigned in the constructor.
+helpers/service.helper.ts(20,3): error TS2564: Property 'adminService' has no initializer and is not definitely assigned in the constructor.
+helpers/service.helper.ts(26,10): error TS2339: Property 'roleService' does not exist on type 'Helper'.
+
+2024.04.11, 09:45:34.0481 UTC -> Error: ⨯ Unable to compile TypeScript:
+helpers/service.helper.ts(17,3): error TS2564: Property 'authService' has no initializer and is not definitely assigned in the constructor.
+helpers/service.helper.ts(19,3): error TS2564: Property 'adminService' has no initializer and is not definitely assigned in the constructor.
+
+2024.04.11, 09:45:43.0872 UTC -> Error: ⨯ Unable to compile TypeScript:
+helpers/service.helper.ts(18,3): error TS2564: Property 'adminService' has no initializer and is not definitely assigned in the constructor.
+
