@@ -6,7 +6,6 @@ class dbConnection {
   connection: object = {};
   constructor() {
     mongoose.set('strictQuery', false);
-    console.log(`${config.DB_CONNECTION}/${config.DATABASE}`);
     this.connection = mongoose
       .connect(`${config.DB_CONNECTION}/${config.DATABASE}`, {})
       .then(() => {
@@ -19,8 +18,8 @@ class dbConnection {
       });
   }
 
-  dbConnectionOpen() {
-    mongoose.connect(`${config.DB_CONNECTION}/${config.DATABASE}`);
+  async dbConnectionOpen() {
+    return mongoose.connect(`${config.DB_CONNECTION}/${config.DATABASE}`).then(d => true).catch(d=>  false);
   }
 
   dbConnectionClose() {

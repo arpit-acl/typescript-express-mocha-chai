@@ -1,33 +1,22 @@
-import { Request, Response } from 'express';
-import dataService from '../services/databaseFactoryServices';
-import RoleModel from './role.model';
+import { Request, Response, response } from 'express';
 import { Types } from 'mongoose';
-import response from '../helpers/request.helper';
-import constants from '../config/constants';
+import serviceHelper from '../helpers/service.helper';
+class Policy extends serviceHelper{
 
-class Role {
-  roleService: dataService;
-  constructor() {
-    this.roleService = new dataService(RoleModel);
-  }
-
-  CreateRole = async (req: Request, res: Response) => {
-    const { roleName, permissions } = req.body;
+  create = async (req: Request, res: Response) => {
+    const { policyName, moduleId, devices, create, read, update, remove } = req.body;
     const roleDetails = await this.roleService.insertDataFactory({
-      roleName,
-      permissions,
+      policyName, moduleId, devices, create, read, update, remove,
       createdBy: new Types.ObjectId(req._user._id)
     });
-
-
-    return response.helper(res, true, 'ROLE_CREATED', roleDetails, constants.RESPONSE_STATUS.SUCCESS);
+    return this.success(res, 'ROLE_CREATED', roleDetails);
   };
 
-  UpdateRole = async (req: Request, res: Response) => {
+  update = async (req: Request, res: Response) => {
     const { roleName, roleId, permissions, status } = req.body;
     const roleData = await this.roleService.find(roleName, 'roleName');
     if(roleData && String(roleId) != String(roleData._id)) {
-      return response.helper(res, false, 'ROLE_EXIST_WITH_SAME_NAME', {}, constants.RESPONSE_STATUS.BAD_REQUEST);
+        return this.error(res, 'ROLE_EXIST_WITH_SAME_NAME', {})
     }
     const updatedRole = await this.roleService.updateDataFactory(
       { _id: roleId },
@@ -36,41 +25,24 @@ class Role {
       ''
     );
     if (!updatedRole) {
-      return response.helper(res, false, 'ROLE_NOT_FOUND', {}, constants.RESPONSE_STATUS.BAD_REQUEST);
+        return this.error(res, 'ROLE_NOT_FOUND', {})
     }
-
-    return response.helper(res, true, 'ROLE_UPDATED', updatedRole, constants.RESPONSE_STATUS.SUCCESS);
+    return this.success(res, 'ROLE_UPDATED', updatedRole);
   };
 
-  RoleDetails = async (req: Request, res: Response) => {
-    const { roleId } = req.params;
+  details = async (req: Request, res: Response) => {
+    const { id: roleId } = req.params;
     const details = await this.roleService.find(roleId);
-    return response.helper(res, true, 'ROLE_DETAILS', details, constants.RESPONSE_STATUS.SUCCESS);
+    return this.success(res, 'ROLE_DETAILS', details);
   };
 
-  RoleList = async (req: any, res: Response) => {
-    const query = [];
-    const projection = {
-      roleName: 1,
-      createdAt: 1,
-      permissions: 1,
-      'adminDetails.name': 1,
-      'roleCount': 1
-    };
-    query.push(...this.roleService.lookupService('admins', 'createdBy', '_id', [], 'adminDetails'));
-    query.push(this.roleService.lookupService('admins', '_id', 'roleId', [{ $count: 'string' }], 'roleCount')[0]);
-    const data = await DatatableQuery({
-      model: RoleModel,
-      matchObj: { status: true },
-      reqQuery: req.query,
-      searchField: ['adminDetails.name', 'roleName'],
-      projection,
-      extraQuery: query
-    });
+  list = async (req: any, res: Response) => {
+    const query: any[] = [];
+    const data = await this.roleService.aggregationQuery(query);
     return res.send(data);
   };
 
-  DeleteRole = async (req: Request, res: Response) => {
+  remove = async (req: Request, res: Response) => {
     const { roleId } = req.params;
     const data = await this.roleService.updateDataFactory(
       { _id: roleId },
@@ -78,10 +50,9 @@ class Role {
       [],
       ''
     );
-    if (!data) return response.helper(res, false, 'ROLE_NOT_FOUND', {}, constants.RESPONSE_STATUS.BAD_REQUEST);
-
-    return response.helper(res, true, 'ROLE_DELETED', data, constants.RESPONSE_STATUS.SUCCESS);
+    if (!data) return this.error(res, 'ROLE_NOT_FOUND', {})
+    return this.success(res, 'ROLE_DELETED', data);
   };
 }
 
-export default new Role();
+export default new Policy();

@@ -24,43 +24,6 @@ class DataBaseFactoryServices {
     return data;
   }
 
-  async getDetails(
-    value: any,
-    field = '_id',
-    selectString: string,
-    model: Model<any>
-  ) {
-    const userData = await model.findOne(
-      {
-        [`${field}`]: value,
-      },
-      selectString
-    );
-    return userData;
-  }
-  async getSingleData(
-    condition: any,
-    populateArray: any,
-    selectString: string
-  ) {
-    const userData = await this.modelObj
-      .findOne(condition, selectString)
-      .populate(populateArray)
-      .lean();
-    return userData;
-  }
-  async getDataFactory(
-    condition: any = {},
-    limit = 0
-    // populateArray: Array<any>,
-    // skipLimitObj: string,
-    // model: Model<any>
-  ) {
-    if (limit) {
-      return await this.modelObj.find(condition).limit(limit);
-    }
-    return await this.modelObj.find(condition);
-  }
   async insertDataFactory(userData: any) {
     const data = new this.modelObj(userData);
     return await data.save();
@@ -106,20 +69,6 @@ class DataBaseFactoryServices {
             [field]: { $regex: searchValue, $options: 'i' },
           })),
         ],
-      },
-    };
-    return query;
-  };
-  public aggregationFilterDate = (
-    queries: aggregationFilter,
-    fieldName: string
-  ) => {
-    const query = {
-      $match: {
-        [fieldName]: {
-          $gte: new Date(queries.startDate),
-          $lte: new Date(queries.endDate),
-        },
       },
     };
     return query;

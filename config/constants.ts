@@ -9,9 +9,10 @@ export default {
     UNAUTHORIZED: 401,
   },
   MODELS: {
-    ADMIN: 'admin',
     ROLES: 'roles',
-    CMS: 'cms',
+    ROLES_POLICY: 'roles_policy',
+    ROLES_MODULES: 'roles_modules',
+    DEVICES: 'devices',
     USER: 'users',
   },
   ROLE_FEATURES:[
@@ -24,7 +25,7 @@ export default {
   DATE_VALIDATION_REGEX: /^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$/,
   USER_ROLES:{
     USER: 'user',
-    ADMIN: 'admin'
+    ADMIN: 'admin',
   },
   EMAIL:{
   },

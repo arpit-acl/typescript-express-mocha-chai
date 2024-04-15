@@ -1,4 +1,4 @@
-import timeLog from '@jobs/timeLog.cron';
+import timeLog from './timeLog.cron';
 import { CronJob } from 'cron';
 import {config} from '../config/config';
 

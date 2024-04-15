@@ -1,4 +1,6 @@
 import { Request, Response } from 'express';
+import bcrypt from 'bcrypt';
+import Jwt from 'jsonwebtoken';
 import { error, info } from '../config/logger';
 import serviceHelper from '../helpers/service.helper';
 
@@ -8,17 +10,9 @@ interface searchVerificationResult {
   Id: string;
 }
 
-const {
-  BAD_REQUEST,
-  SERVER_ERROR,
-  SUCCESS,
-} = serviceHelper.constants.RESPONSE_STATUS;
-const {
-  constants, config, responseHelper : response,
-} = serviceHelper;
-
 class authController extends serviceHelper {
 
+  
   // Authentication Functions start
 
   signup = async (req: Request, res: Response) => {
@@ -30,13 +24,8 @@ class authController extends serviceHelper {
       const emailUser = await this.userService.find(email, 'email');
       if (emailUser) {
         info('email already used error in signup');
-        return response.helper(res, false, 'EMAIL_ALREADY_REGISTERED', {}, BAD_REQUEST);
+        return this.error(res, 'EMAIL_ALREADY_REGISTERED', {});
       }
-
-
-
-
-
       // insert user to database
       const user = await this.userService.insertDataFactory({
         firstName,
@@ -50,85 +39,32 @@ class authController extends serviceHelper {
       }
     } catch (err: any) {
       error(`Error in signup controller ${err}`);
-      response.helper(
-        res,
-        false,
-        'SOMETHING_WENT_WRONG',
-        {},
-        SERVER_ERROR
-      );
-    }
+      return this.error(res, err.message, {});
+   }
   };
 
   login = async (req: Request, res: Response) => {
     try {
       const { email, password, otp, secret } = req.body;
       // admin validation
-      const admin = await this.adminService.find(email, 'email', 'roleId');
+      const admin = await this.userService.find(email, 'email', 'roleId');
       if (!admin) {
-        return response.helper(
-          res,
-          true,
-          'ADMIN_NOT_FOUND',
-          {},
-          BAD_REQUEST
-        );
+        return this.error(res, 'ADMIN_NOT_FOUND' , {});
       }
       // password validation
       if (!(await bcrypt.compare(password, admin.password))) {
-        return response.helper(
-          res,
-          false,
-          'WRONG_CREDENTIALS',
-          {},
-          BAD_REQUEST
-        );
+        return this.error(res, 'WRONG_CREDENTIALS', {});
       }
-      if(!admin._2faSecret && !secret && !otp) {
-        const secret = oAuthSecret(email);
-        return response.helper(res, true, 'SET_2FA', {secret},SUCCESS);
-      }
-      delete admin.password;
-      if(admin.isDeleted){
-        return response.helper(res, false, 'ACCOUNT_IN_ACTIVE', {}, BAD_REQUEST);
-      }
-      if(admin.isBlock){
-        return response.helper(res, false, 'ACCOUNT_IN_ACTIVE', {}, BAD_REQUEST);
-      }
-      const secretCode = admin._2faSecret ? admin._2faSecret : secret.secret;
-      if (otp) { 
-        const validateOtp = verifyOAuthCode(secretCode, otp);
-        if(validateOtp) {
-          if(!admin._2faSecret && secret) {
-            await this.adminService.updateDataFactory({email}, {_2faSecret: secretCode}, [],'');        
-          }
-        } else {
-          return response.helper(res, false, '2FA_CODE_EXPIRED', {}, BAD_REQUEST);
-        }
-      } else {
-        return response.helper(res, false, '2FA_REQUIRED', {}, BAD_REQUEST);
-      }
-      const token = Jwt.sign({_id:admin._id, email:admin.email, isSuperAdmin: admin.isSuperAdmin, roleId: admin.roleId, fcmToken: admin?.fcmToken }, config.JWT_SECRET, { expiresIn: '1d' });
+      // token create 
+      const token = Jwt.sign({_id:admin._id, email:admin.email, isSuperAdmin: admin.isSuperAdmin, roleId: admin.roleId, fcmToken: admin?.fcmToken }, this.config.JWT_SECRET, { expiresIn: '1d' });
       const responseData = {
         token,
         user: admin,
       };
-      await this.adminService.updateDataFactory({email}, {token}, [],'');        
-      return response.helper(
-        res,
-        true,
-        'LOGIN_SUCCESS',
-        responseData,
-        SUCCESS
-      );
+      await this.userService.updateDataFactory({email}, {token}, [],'');        
+      return this.success(res, 'LOGIN_SUCCESS', responseData);
     } catch (err: any) {
-      response.helper(
-        res,
-        false,
-        err.toString(),
-        {},
-        SERVER_ERROR
-      );
+      return this.error(res, err.message, {});
     }
   };
 

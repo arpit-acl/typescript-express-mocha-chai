@@ -20,7 +20,7 @@ app.use((req: any, res: any) => {
  * start server and all process
  */
 export async function startServer() {
-  if (dbConnection.connection) {
+  if (await dbConnection.dbConnectionOpen()) {
     app.listen(config.PORT, config.HOST, () => {
       info(`Server Listing At http://${config.HOST}:${config.PORT}`);
       new cronIndex();

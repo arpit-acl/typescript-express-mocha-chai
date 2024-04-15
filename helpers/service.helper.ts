@@ -1,26 +1,32 @@
 import dataService from '../services/databaseFactoryServices';
 import userModel from '../models/user.model';
-import cmsModel from '../models/cms.model';
-import roleModel from '../models/role.model';
+import roleModel from '../models/roles.model';
+import deviceModel from '../models/devices.model';
+import rolePolicyModel from '../models/rolePolicy.model';
+import roleModuleModel from '../models/roleModules.model';
 
 import constants from '../config/constants';
 import { config } from '../config/config';
-import response from './request.helper';
+import request from './request.helper';
 
-class Helper {
+class Helper extends request{
   
-  static config = config;
-  static constants = constants;
-  static responseHelper = response;
+  config = config;
+  constants = constants;
 
   userService: dataService;
-  cmsService: dataService;
   roleService: dataService;
+  deviceService: dataService;
+  roleModuleService: dataService;
+  rolePolicyService: dataService;
     
   constructor () {
+    super();
     this.userService = new dataService(userModel);
-    this.cmsService = new dataService(cmsModel);
     this.roleService = new dataService(roleModel);
+    this.deviceService = new dataService(deviceModel);
+    this.roleModuleService = new dataService(roleModuleModel);
+    this.rolePolicyService = new dataService(rolePolicyModel);
   }
   
 }

@@ -9,11 +9,12 @@ const {
 
 export default (schema: Joi.ObjectSchema) => {
   return (req: Request, res: Response, next: NextFunction) => {
+    const resp = new response();
     const params = req.body;
     const valid = schema.validate(params);
     if (valid.error) {
       const errorMessage = valid?.error?.details[0]?.message?.replace(/"/g, '');
-      return response.helper(res, false, errorMessage, {}, BAD_REQUEST);
+      return resp.error(res, errorMessage, {});
     }
     next();
   };
@@ -21,23 +22,25 @@ export default (schema: Joi.ObjectSchema) => {
 
 export const QueryValidator = (schema: Joi.ObjectSchema) => {
   return (req: Request, res: Response, next: NextFunction) => {
-    const params = req.query;
-    const valid = schema.validate(params);
+    const resp = new response();
+    const valid = schema.validate(req.query);
     if (valid.error) {
       const errorMessage = valid?.error?.details[0]?.message?.replace(/"/g, '');
-      return response.helper(res, false, errorMessage, {}, BAD_REQUEST);
+      return resp.error(res, errorMessage, {});
     }
     next();
   };
 };
 export const ParamsValidator = (schema: Joi.ObjectSchema) => {
   return (req: Request, res: Response, next: NextFunction) => {
+    const resp = new response();
     const { params } = req;
     const valid = schema.validate(params);
     if (valid.error) {
       const errorMessage = valid?.error?.details[0]?.message?.replace(/"/g, '');
-      return response.helper(res, false, errorMessage, {}, BAD_REQUEST);
+      return resp.error(res, errorMessage, {});
     }
     next();
   };
+  
 };
