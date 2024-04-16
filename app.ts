@@ -14,19 +14,19 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(routers);
 app.use((req: any, res: any) => {
+  console.log('in here server');
   res.send('Server Running');
 });
 /**
  * start server and all process
  */
-export async function startServer() {
-  if (await dbConnection.dbConnectionOpen()) {
+export async function startServer() { 
     app.listen(config.PORT, config.HOST, () => {
       info(`Server Listing At http://${config.HOST}:${config.PORT}`);
       new cronIndex();
+    })
+    app.on('error', (er) => {
+      console.log(er);
     });
-  } else {
-    process.exit(0);
-  }
   return app;
 }

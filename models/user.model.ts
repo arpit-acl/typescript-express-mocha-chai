@@ -29,22 +29,24 @@ export interface UserDoc {
   userType: string;
   isBlocked: boolean;
   confirmPassword(password: string): Promise<boolean>;
-  roleId: ObjectId
+  roleId: ObjectId;
+  createdBy: ObjectId;
 }
 
 const UserSchema = new Schema<UserDoc>({
 
   firstName : { type: String, default: '' },
   lastName: { type: String, default: '' },
-  userType: { type: String, enum: ['admin', 'user', 'subAdmin']},
+  userType: { type: String, enum: ['superAdmin', 'admin', 'user', 'subAdmin']},
   roleId: { type: Types.ObjectId, ref: 'roles' },
   email: { type: String, unique: true},
-  password: { type: String },
+  password: { type: String, select: false },
   dob: { type: String },
   token: { type: String},
   superAdmin: { type: Schema.Types.ObjectId, ref: constants.MODELS.USER },
   isDeleted: { type: Boolean, default: false },
   isBlocked: {type: Boolean, default: false},
+  createdBy: { type: Schema.Types.ObjectId, ref: constants.MODELS.USER},
 }, {
   timestamps: true,
   versionKey: false,

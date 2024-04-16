@@ -34,8 +34,8 @@ class DataBaseFactoryServices {
   async updateDataFactory(
     condition: any,
     updatedData: any,
-    populateArray: Array<any>,
-    selectString: string,
+    populateArray = [],
+    selectString = '',
     upsert = false
   ) {
     return await this.modelObj

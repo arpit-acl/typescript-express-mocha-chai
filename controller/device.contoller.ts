@@ -1,15 +1,15 @@
 import { Request, Response, response } from 'express';
 import { Types } from 'mongoose';
 import serviceHelper from '../helpers/service.helper';
-class Policy extends serviceHelper{
+class Device extends serviceHelper{
 
   create = async (req: Request, res: Response) : Promise<any> => {
-    const { policyName, moduleId, devices, create, read, update, remove } = req.body;
-    const roleDetails = await this.rolePolicyService.insertDataFactory({
-      policyName, moduleId, devices, create, read, update, remove,
-      createdBy: new Types.ObjectId(req._user?._id)
+    const { name, category, deviceModel } = req.body;
+    const uuid = new Date().getTime();
+    const device = await this.deviceService.insertDataFactory({
+      name, category, deviceModel, uuid
     });
-    return this.success(res, 'POLICY_CREATED', roleDetails);
+    return this.success(res, 'DEVICE_CREATED', {device});
   };
 
   update = async (req: Request, res: Response) => {
@@ -20,20 +20,20 @@ class Policy extends serviceHelper{
       [],
       ''
     );
-    return this.success(res, 'POLICY_UPDATED', updatedRole);
+    return this.success(res, 'DEVICE_UPDATED', updatedRole);
   };
 
   details = async (req: Request, res: Response)  : Promise<any>  => {
     const { id: policyId } = req.params;
     const details = await this.rolePolicyService.find(policyId);
-    return this.success(res, 'POLICY_DETAILS', details);
+    return this.success(res, 'DEVICE_DETAILS', details);
   };
 
   list = async (req: any, res: Response) : Promise<any> => {
     const query: any[] = [];
     query.push(this.rolePolicyService.aggregationDatatable({}));
     const data = await this.rolePolicyService.aggregationQuery(query);
-    return this.success(res, 'POLICY_LIST', data);
+    return this.success(res, 'DEVICE_LIST', data);
   };
 
   remove = async (req: Request, res: Response) => {
@@ -42,9 +42,9 @@ class Policy extends serviceHelper{
       { _id: policyId },
       { status: false },
     );
-    if (!data) return this.error(res, 'POLICY_NOT_FOUND', {})
-    return this.success(res, 'POLICY_DELETED', data);
+    if (!data) return this.error(res, 'DEVICE_NOT_FOUND', {})
+    return this.success(res, 'DEVICE_DELETED', data);
   };
 }
 
-export default new Policy();
+export default new Device();

@@ -3,7 +3,7 @@ import userModel from '../models/user.model';
 import roleModel from '../models/roles.model';
 import deviceModel from '../models/devices.model';
 import rolePolicyModel from '../models/rolePolicy.model';
-import roleModuleModel from '../models/roleModules.model';
+import modulesModel from '../models/modules.model';
 
 import constants from '../config/constants';
 import { config } from '../config/config';
@@ -17,7 +17,7 @@ class Helper extends request{
   userService: dataService;
   roleService: dataService;
   deviceService: dataService;
-  roleModuleService: dataService;
+  moduleService: dataService;
   rolePolicyService: dataService;
     
   constructor () {
@@ -25,7 +25,7 @@ class Helper extends request{
     this.userService = new dataService(userModel);
     this.roleService = new dataService(roleModel);
     this.deviceService = new dataService(deviceModel);
-    this.roleModuleService = new dataService(roleModuleModel);
+    this.moduleService = new dataService(modulesModel);
     this.rolePolicyService = new dataService(rolePolicyModel);
   }
   

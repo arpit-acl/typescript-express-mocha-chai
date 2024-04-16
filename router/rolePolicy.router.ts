@@ -1,14 +1,12 @@
 import express from 'express';
-import controller from '../controller/role.controller';
-import permission from '../middleware/permission';
+import controller from '../controller/policy.controller';
 
-const policyRouter = express.Router();
+const router = express.Router();
 
-policyRouter.use(permission('policy'));
-policyRouter.post('/',  controller.create); 
-policyRouter.put('/', controller.update);
-policyRouter.delete('/', controller.remove); 
-policyRouter.get('/', controller.list);
-policyRouter.get('/:id', controller.details);
+router.post('/',  controller.create); 
+router.put('/', controller.update);
+router.delete('/', controller.remove); 
+router.get('/', controller.list);
+router.get('/:id', controller.details);
 
-export default policyRouter;
+export default router;

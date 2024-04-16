@@ -2,8 +2,8 @@ import { Document, ObjectId, Schema, model } from 'mongoose';
 import constants from '../config/constants';
 
 interface RoleDoc  {
-  roleName : string;
-  rolePolicies: Array<ObjectId>;
+  name : string;
+  policies: Array<ObjectId>;
   createdBy: ObjectId;
   updatedBy: ObjectId;
   status: boolean;
@@ -11,8 +11,8 @@ interface RoleDoc  {
 
 const collectionSchema = new Schema<RoleDoc>({
 
-  roleName : { type: String },
-  rolePolicies: [ Schema.Types.ObjectId ],
+  name : { type: String },
+  policies: [ Schema.Types.ObjectId ],
   createdBy: { type: Schema.Types.ObjectId, ref: constants.MODELS.USER },
   updatedBy: { type: Schema.Types.ObjectId, ref: constants.MODELS.USER},
   status: { type: Boolean, default: true },

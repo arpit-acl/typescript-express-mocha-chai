@@ -1,8 +1,12 @@
 import express from 'express';
-import authController from '../controller/auth.controller';
-import requestValidator from '../middleware/request.validator';
+import controller from '../controller/device.contoller';
 
-const deviceRouter = express.Router();
+const router = express.Router();
 
+router.post('/',  controller.create); 
+router.put('/', controller.update);
+router.delete('/', controller.remove); 
+router.get('/', controller.list);
+router.get('/:id', controller.details);
 
-export default deviceRouter;
+export default router;

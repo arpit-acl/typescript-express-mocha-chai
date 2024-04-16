@@ -3,8 +3,12 @@ import {config} from '../config/config';
 import constants from '../config/constants';
 import * as twofactor from 'node-2fa'; 
 import Crypto from 'node:crypto';
+import Jwt from 'jsonwebtoken';
 
-export function add(a: number, b: number): number {
+export const generateToken = async (tokenData  : string) : Promise<string> => {
+  return await Jwt.sign(tokenData, config.JWT_SECRET);
+}
+export const  add =  (a: number, b: number): number  => {
   return a + b;
 }
 

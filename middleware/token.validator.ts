@@ -21,6 +21,7 @@ class tokenValidator {
           return resp.unAuthorized(res);
         } else {
           const user = await User.findById({_id: decoded._id});
+          console.log(user);
           req._user = user;
           next();
         }
@@ -35,7 +36,7 @@ class tokenValidator {
           return resp.unAuthorized(res);
         } else {
           req._user = decoded;
-          if(req._user.isSuperAdmin) return next();
+          if(req._user?.superAdmin) return next();
           return resp.unAuthorized(res);
         }
       });

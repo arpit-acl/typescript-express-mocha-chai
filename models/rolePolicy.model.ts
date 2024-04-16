@@ -3,8 +3,8 @@ import constants from '../config/constants';
 
 interface RolePolicyDoc {
   policyName: string;
-  module: ObjectId;
-  devices: ObjectId;
+  moduleId: ObjectId;
+  devices: [ObjectId];
   create: boolean;
   read: boolean;
   update: boolean;
@@ -16,8 +16,8 @@ interface RolePolicyDoc {
 
 const collectionSchema = new Schema<RolePolicyDoc>({
   policyName: { type: String, required: true },
-  module: { type: mongoose.Types.ObjectId },
-  devices: { type: mongoose.Types.ObjectId },
+  moduleId: { type: mongoose.Types.ObjectId , ref: constants.MODELS.MODULES },
+  devices: [mongoose.Types.ObjectId],
   create: { type: Boolean, required: true },
   read: { type: Boolean, required: true },
   update: { type: Boolean, required: true },
@@ -32,5 +32,5 @@ const collectionSchema = new Schema<RolePolicyDoc>({
   collection: constants.MODELS.ROLES_POLICY
 });
 
-const RoleModel = model<RolePolicyDoc>(constants.MODELS.ROLES_POLICY, collectionSchema);
-export default RoleModel;
+const RolePolicyModel = model<RolePolicyDoc>(constants.MODELS.ROLES_POLICY, collectionSchema);
+export default RolePolicyModel;

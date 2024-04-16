@@ -1,26 +1,26 @@
 import { Request, Response, response } from 'express';
 import { Types } from 'mongoose';
 import serviceHelper from '../helpers/service.helper';
-class Policy extends serviceHelper{
+class Role extends serviceHelper{
 
   create = async (req: Request, res: Response) => {
-    const { policyName, moduleId, devices, create, read, update, remove } = req.body;
+    const { name, policies,  } = req.body;
     const roleDetails = await this.roleService.insertDataFactory({
-      policyName, moduleId, devices, create, read, update, remove,
-      createdBy: new Types.ObjectId(req._user._id)
+      name, policies,
+      createdBy: new Types.ObjectId(req._user?._id)
     });
     return this.success(res, 'ROLE_CREATED', roleDetails);
   };
 
   update = async (req: Request, res: Response) => {
-    const { roleName, roleId, permissions, status } = req.body;
-    const roleData = await this.roleService.find(roleName, 'roleName');
+    const { name, policies, status, roleId } = req.body;
+    const roleData = await this.roleService.find(name, 'roleName');
     if(roleData && String(roleId) != String(roleData._id)) {
         return this.error(res, 'ROLE_EXIST_WITH_SAME_NAME', {})
     }
     const updatedRole = await this.roleService.updateDataFactory(
       { _id: roleId },
-      { roleName, permissions, status },
+      { name, policies, status },
       [],
       ''
     );
@@ -38,12 +38,13 @@ class Policy extends serviceHelper{
 
   list = async (req: any, res: Response) => {
     const query: any[] = [];
+    query.push(this.roleService.aggregationDatatable({}));
     const data = await this.roleService.aggregationQuery(query);
-    return res.send(data);
+    return this.success(res, 'ROLE_LIST', data);
   };
 
   remove = async (req: Request, res: Response) => {
-    const { roleId } = req.params;
+    const { roleId } = req.body;
     const data = await this.roleService.updateDataFactory(
       { _id: roleId },
       { status: false },
@@ -55,4 +56,4 @@ class Policy extends serviceHelper{
   };
 }
 
-export default new Policy();
+export default new Role();

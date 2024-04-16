@@ -1,8 +1,8 @@
 import express from 'express';
-import requestValidator from '../middleware/request.validator';
-
-const userRouter = express.Router();
-
+import controller from '../controller/user.controller'
+const router = express.Router();
 
 
-export default userRouter;
+router.post('/',  controller.create); 
+
+export default router;

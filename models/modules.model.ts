@@ -2,18 +2,18 @@ import { Document, ObjectId, Schema, model } from 'mongoose';
 import constants from '../config/constants';
 
 interface ModuleDoc {
-  policyName: string;
+  name: string;
   status: Boolean;
 }
 
 const collectionSchema = new Schema<ModuleDoc>({
-  policyName: { type: String, required: true },
+  name: { type: String, required: true },
   status: { type: Boolean, default: true },
 }, {
   timestamps: true,
   versionKey: false,
-  collection: constants.MODELS.ROLES_MODULES
+  collection: constants.MODELS.MODULES
 });
 
-const RoleModel = model<ModuleDoc>(constants.MODELS.ROLES_MODULES, collectionSchema);
-export default RoleModel;
+const ModulesModel = model<ModuleDoc>(constants.MODELS.MODULES, collectionSchema);
+export default ModulesModel;

@@ -1,14 +1,12 @@
 import express from 'express';
 import controller from '../controller/role.controller';
-import permission from '../middleware/permission';
 
-const roleRouter = express.Router();
+const router = express.Router();
 
-roleRouter.use(permission('role'));
-roleRouter.post('/',  controller.create); 
-roleRouter.put('/', controller.update);
-roleRouter.delete('/', controller.remove); 
-roleRouter.get('/', controller.list);
-roleRouter.get('/:id', controller.details);
+router.post('/',  controller.create); 
+router.put('/', controller.update);
+router.delete('/', controller.remove); 
+router.get('/', controller.list);
+router.get('/:id', controller.details);
 
-export default roleRouter;
+export default router;

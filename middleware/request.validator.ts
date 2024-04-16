@@ -9,12 +9,12 @@ const {
 
 export default (schema: Joi.ObjectSchema) => {
   return (req: Request, res: Response, next: NextFunction) => {
-    const resp = new response();
+    console.log(req.body);
     const params = req.body;
     const valid = schema.validate(params);
     if (valid.error) {
       const errorMessage = valid?.error?.details[0]?.message?.replace(/"/g, '');
-      return resp.error(res, errorMessage, {});
+      return res.send()
     }
     next();
   };

@@ -21,5 +21,5 @@ const collectionSchema = new Schema<DevicesDoc>({
   collection: constants.MODELS.DEVICES
 });
 
-const RoleModel = model<DevicesDoc>(constants.MODELS.DEVICES, collectionSchema);
-export default RoleModel;
+const DeviceModel = model<DevicesDoc>(constants.MODELS.DEVICES, collectionSchema);
+export default DeviceModel;

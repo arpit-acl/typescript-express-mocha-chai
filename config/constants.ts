@@ -10,8 +10,8 @@ export default {
   },
   MODELS: {
     ROLES: 'roles',
-    ROLES_POLICY: 'roles_policy',
-    ROLES_MODULES: 'roles_modules',
+    ROLES_POLICY: 'roles_policies',
+    MODULES: 'modules',
     DEVICES: 'devices',
     USER: 'users',
   },
